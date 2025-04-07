@@ -1,0 +1,1 @@
+Our AI agents are developed on top of open source Dify. On top of Dify, we have our Gabe system which provides enhanced user management and security. Below Dify, we also implemented Knowledge Graph, RAG, etc. which are very important modules to extend Dify capability.
