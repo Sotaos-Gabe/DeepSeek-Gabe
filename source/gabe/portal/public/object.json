@@ -1,0 +1,11 @@
+{
+  "conf": {
+    "versionTip": "Dataa RobotGPT Data Model v1.5.0 Version",
+    "icon": "favicon.ico",
+    "logo": "cloud-1.svg",
+    "logoTip": "达闼RobotGPT",
+    "title": "您好，我是达闼机器人RobotGPT",
+    "robotImg": "cloud-1.svg",
+    "content": "我可以学习和理解人类的语言，具备多轮对话的能力。我能帮助您编写文案、创意图片、生成代码，高效地获取信息和激发灵感。现在我们开始交流吧！"
+  }
+}

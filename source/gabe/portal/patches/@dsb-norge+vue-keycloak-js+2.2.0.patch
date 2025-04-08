@@ -1,0 +1,32 @@
+diff --git a/node_modules/@dsb-norge/vue-keycloak-js/dist/dsb-vue-keycloak.cjs.js b/node_modules/@dsb-norge/vue-keycloak-js/dist/dsb-vue-keycloak.cjs.js
+index 9d1105d..cd0663b 100644
+--- a/node_modules/@dsb-norge/vue-keycloak-js/dist/dsb-vue-keycloak.cjs.js
++++ b/node_modules/@dsb-norge/vue-keycloak-js/dist/dsb-vue-keycloak.cjs.js
+@@ -160,9 +160,9 @@ function init(config, watch, options) {
+         const updateTokenInterval = setInterval(() => keycloak.updateToken(60).catch(() => {
+             keycloak.clearToken();
+         }), 10000);
+-        watch.logoutFn = () => {
++        watch.logoutFn = (url) => {
+             clearInterval(updateTokenInterval);
+-            keycloak.logout(options.logout);
++            keycloak.logout(url);
+         };
+     };
+     keycloak.onAuthRefreshSuccess = function () {
+diff --git a/node_modules/@dsb-norge/vue-keycloak-js/dist/dsb-vue-keycloak.umd.js b/node_modules/@dsb-norge/vue-keycloak-js/dist/dsb-vue-keycloak.umd.js
+index a866cdd..b6730ac 100644
+--- a/node_modules/@dsb-norge/vue-keycloak-js/dist/dsb-vue-keycloak.umd.js
++++ b/node_modules/@dsb-norge/vue-keycloak-js/dist/dsb-vue-keycloak.umd.js
+@@ -161,9 +161,9 @@
+             const updateTokenInterval = setInterval(() => keycloak.updateToken(60).catch(() => {
+                 keycloak.clearToken();
+             }), 10000);
+-            watch.logoutFn = () => {
++            watch.logoutFn = (url) => {
+                 clearInterval(updateTokenInterval);
+-                keycloak.logout(options.logout);
++                keycloak.logout(url);
+             };
+         };
+         keycloak.onAuthRefreshSuccess = function () {

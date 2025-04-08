@@ -1,0 +1,108 @@
+{
+    "harix": {
+      "appId": "qv4WvWcI",
+      "appKey": "93c77dafc649901c99e8bd9868a647aecdb3f889",
+      "tenantId": "CM-Demo-Amp",
+      "quantity": 1,
+      "sererAddress": "wss://psc-player-fit86.harix.iamidata.com/harix",
+      "asrsererAddress": "wss://vadskill-poc-fit86.harix.iamidata.com/api/v1/mp/asr",
+      "showFlage": false
+    },
+    "config": {
+      "vendor": "CloudMinds",
+      "language": "CH",
+      "dialect": "CH",
+      "recognizeOnly": true,
+      "saleAgentId": 3135
+    },
+    "asrinfo": {
+      "tenantId": "CM-Demo-SZRSS01",
+      "userId": "1682232410058_0",
+      "robotId": "5e7502ca-05be-480e-bf89-14ef8102204b",
+      "asrsererAddress": "wss://vadskill-poc-fit86.harix.iamidata.com/api/v1/mp/asr"
+    },
+    "fileSupport": ["pdf", "doc", "docx", "txt", "csv"],
+    "email": "robotsupport@dataarobotics.com",
+    "defaultModelCode": "robotgpt_a",
+    "defaultModelType": "robotgpt-rc",
+    "authMode": "idoe",
+    "appid": "ff8080818b1277fd018ba3551a3e2bb2",
+    "authUrl": "http://10.229.252.212:10000/isc_sso",
+  
+    "logoName": "logo",
+    "chatTypeList": [
+      {
+        "label": "智能问答",
+        "value": 4,
+        "modelCode": "robotgpt_a",
+        "defaulticon": "4",
+        "activeicon": "4-1",
+        "modelType": "robotgpt-rc"
+      },
+      {
+        "label": "文档智能",
+        "value": 1,
+        "modelCode": "robotgpt_a",
+        "isFile": true,
+        "defaulticon": "1",
+        "activeicon": "1-1",
+        "modelType": "robotgpt-rc"
+      },
+      {
+        "label": "以文生图",
+        "value": 5,
+        "modelCode": "robotgpt_a",
+        "defaulticon": "5",
+        "activeicon": "5-1",
+        "modelType": "robotgpt-rc"
+      },
+      {
+        "label": "文档创作",
+        "value": 6,
+        "modelCode": "robotgpt_a",
+        "defaulticon": "6",
+        "activeicon": "6-1",
+        "modelType": "robotgpt-rc"
+      },
+      {
+        "label": "文库问答",
+        "value": 12,
+        "modelCode": "robotgpt_dit",
+        "defaulticon": "12",
+        "activeicon": "12-1",
+        "modelType": "robotgpt-rc"
+      },
+      {
+        "label": "出小差",
+        "value": 10,
+        "modelCode": "robotgpt_1848",
+        "immediateQuestion": "我要出差",
+        "defaulticon": "10",
+        "activeicon": "10-1",
+        "modelType": "robotgpt-rc"
+      },
+      {
+        "label": "文档出题",
+        "value": 9,
+        "modelCode": "robotgpt_a",
+        "isFile": true,
+        "defaulticon": "9",
+        "activeicon": "9-1",
+        "modelType": "robotgpt-rc"
+      },
+      {
+        "label": "以图生文",
+        "value": 13,
+        "modelCode": "robotgpt_a",
+        "icon": 5,
+        "modelType": "robotgpt-rc",
+        "isFile": true,
+        "showFileList": false,
+        "isImg": true,
+        "immediateQuestion": "请描述一下图片信息",
+        "defaulticon": "13",
+        "activeicon": "13-1"
+      }
+    ]
+  }
+  

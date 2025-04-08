@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>飞机</title>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="智能对话切图" transform="translate(-166, -133)" fill="#FFFFFF" fill-rule="nonzero">
+            <g id="编组-4" transform="translate(166, 133)">
+                <path d="M22.9551389,2.06690603 L15.9828604,22.4555645 C15.7234248,23.2142182 14.6353504,23.1683937 14.4406221,22.3906128 L12.101,13.046 L15.9930669,7.99879145 L10.864,11.964 L1.65206199,10.1824642 C0.900505977,10.0370382 0.775236807,9.04848659 1.39862453,8.69623598 L1.52431293,8.63800683 L21.9129747,1.05219181 C22.5493083,0.81543723 23.174828,1.42448109 22.9551389,2.06690603 Z" id="形状结合"></path>
+            </g>
+        </g>
+    </g>
+</svg>

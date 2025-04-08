@@ -1,0 +1,115 @@
+diff --git a/node_modules/pdfjs-dist/build/pdf.js b/node_modules/pdfjs-dist/build/pdf.js
+index dcefe07..d191a66 100644
+--- a/node_modules/pdfjs-dist/build/pdf.js
++++ b/node_modules/pdfjs-dist/build/pdf.js
+@@ -10700,7 +10700,7 @@ function () {
+ 
+             var value = _ref5.value,
+                 done = _ref5.done;
+-
++                // console.log('value+++',value)
+             if (done) {
+               resolve(textContent);
+               return;
+@@ -19278,7 +19278,7 @@ var renderTextLayer = function renderTextLayerClosure() {
+     _processItems: function _processItems(items, styleCache) {
+       for (var i = 0, len = items.length; i < len; i++) {
+         this._textContentItemsStr.push(items[i].str);
+-
++        // console.log('this._textContentItemsStr+++',this._textContentItemsStr)
+         appendText(this, items[i], styleCache);
+       }
+     },
+@@ -19341,6 +19341,7 @@ var renderTextLayer = function renderTextLayerClosure() {
+ 
+         capability.resolve();
+       } else if (this._textContentStream) {
++        // console.log('this._textContentStream',this._textContentStream)
+         var pump = function pump() {
+           _this2._reader.read().then(function (_ref2) {
+             var value = _ref2.value,
+@@ -19352,6 +19353,7 @@ var renderTextLayer = function renderTextLayerClosure() {
+             }
+ 
+             Object.assign(styleCache, value.styles);
++            // console.log('value.items',value.items)
+           
+             _this2._processItems(value.items, styleCache);
+ 
+diff --git a/node_modules/pdfjs-dist/web/pdf_viewer.js b/node_modules/pdfjs-dist/web/pdf_viewer.js
+index f790e26..0c342da 100644
+--- a/node_modules/pdfjs-dist/web/pdf_viewer.js
++++ b/node_modules/pdfjs-dist/web/pdf_viewer.js
+@@ -2479,6 +2479,7 @@ function () {
+   }, {
+     key: "render",
+     value: function render() {
++      // console.log('render+++')
+       var _this = this;
+ 
+       var timeout = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+@@ -2490,6 +2491,7 @@ function () {
+       this.cancel();
+       this.textDivs = [];
+       var textLayerFrag = document.createDocumentFragment();
++      
+       this.textLayerRenderTask = (0, _pdfjsLib.renderTextLayer)({
+         textContent: this.textContent,
+         textContentStream: this.textContentStream,
+@@ -2673,7 +2675,8 @@ function () {
+         } else {
+           appendTextToDiv(prevEnd.divIdx, prevEnd.offset, begin.offset);
+         }
+-
++        // console.log('begin',begin)
++        // console.log('end',end)
+         if (begin.divIdx === end.divIdx) {
+           appendTextToDiv(begin.divIdx, begin.offset, end.offset, 'highlight' + highlightSuffix);
+         } else {
+@@ -4267,7 +4270,21 @@ function () {
+     key: "_calculateWordMatch",
+     value: function _calculateWordMatch(query, pageIndex, pageContent, entireWord) {
+       var matchesWithLength = [];
+-      var queryArray = query.match(/\S+/g);
++      var queryArray = []
++      var newQuery = query.replace(/\s+/g, '')
++      var newPageContent = ''
++      newPageContent = pageContent.replace(/\s+/g, '')
++
++      if (newQuery.length > 300) {
++        
++        var length = Math.ceil(newQuery.length/20)
++        Array.from({length: 20}, function(x, i) {
++          queryArray.push(newQuery.slice(length*i, (i+1)*length))
++        })
++      } else {
++        this._calculatePhraseMatch(query, pageIndex, pageContent, entireWord);
++        return
++      }
+     
+       for (var i = 0, len = queryArray.length; i < len; i++) {
+         var subquery = queryArray[i];
+@@ -4275,13 +4292,13 @@ function () {
+         var matchIdx = -subqueryLen;
+         
+         while (true) {
+-          matchIdx = pageContent.indexOf(subquery, matchIdx + subqueryLen);
++          matchIdx = newPageContent.indexOf(subquery, matchIdx + subqueryLen);
+ 
+           if (matchIdx === -1) {
+             break;
+           }
+ 
+-          if (entireWord && !this._isEntireWord(pageContent, matchIdx, subqueryLen)) {
++          if (entireWord && !this._isEntireWord(newPageContent, matchIdx, subqueryLen)) {
+             continue;
+           }
+ 
+@@ -6463,6 +6480,7 @@ var BaseViewer =
+ /*#__PURE__*/
+ function () {
+   function BaseViewer(options) {
++    console.log('options',options)
+     var _this = this;
+ 
+     _classCallCheck(this, BaseViewer);

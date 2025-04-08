@@ -1,0 +1,6 @@
+{
+  "enable": false,
+  "url": "https://idoe-fit.service.iamidata.com/auth/realms/cloudminds-id/protocol/openid-connect/token",
+  "clientid": "amp-fit86-frontend"
+}
+
